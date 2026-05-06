@@ -1,1 +1,282 @@
-Hello World
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Budget Pro - Professional Spending Tracker</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary": "#a63b00",
+                "outline": "#6d797b",
+                "tertiary": "#4f6071",
+                "on-tertiary-fixed-variant": "#374859",
+                "tertiary-fixed-dim": "#b6c8dc",
+                "on-secondary-fixed": "#370e00",
+                "surface-container-high": "#dce9ff",
+                "secondary-fixed": "#ffdbce",
+                "primary": "#006973",
+                "on-primary-fixed": "#001f23",
+                "surface-container-low": "#eff4ff",
+                "surface-container": "#e5eeff",
+                "on-secondary-fixed-variant": "#7f2b00",
+                "on-error-container": "#93000a",
+                "on-surface-variant": "#3d494b",
+                "on-tertiary-fixed": "#0b1d2c",
+                "inverse-on-surface": "#eaf1ff",
+                "secondary-container": "#fc6c29",
+                "on-tertiary": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary-container": "#5a1c00",
+                "error": "#ba1a1a",
+                "on-surface": "#0b1c30",
+                "surface-dim": "#cbdbf5",
+                "surface-bright": "#f8f9ff",
+                "inverse-surface": "#213145",
+                "primary-fixed": "#91f1ff",
+                "surface-variant": "#d3e4fe",
+                "surface-container-highest": "#d3e4fe",
+                "on-primary": "#ffffff",
+                "on-secondary": "#ffffff",
+                "error-container": "#ffdad6",
+                "on-tertiary-container": "#1c2d3d",
+                "on-primary-container": "#003136",
+                "secondary-fixed-dim": "#ffb599",
+                "on-background": "#0b1c30",
+                "primary-container": "#00a2b1",
+                "surface-tint": "#006973",
+                "tertiary-fixed": "#d2e4f9",
+                "on-error": "#ffffff",
+                "tertiary-container": "#8395a8",
+                "primary-fixed-dim": "#5ed7e7",
+                "background": "#f8f9ff",
+                "on-primary-fixed-variant": "#004f57",
+                "surface": "#f8f9ff",
+                "inverse-primary": "#5ed7e7",
+                "outline-variant": "#bcc9cb"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "lg": "24px",
+                "gutter": "16px",
+                "xxl": "48px",
+                "sm": "8px",
+                "xs": "4px",
+                "xl": "32px",
+                "base": "4px",
+                "container-margin": "24px",
+                "md": "16px"
+        },
+        "fontFamily": {
+                "headline-md": ["Inter"],
+                "body-md": ["Inter"],
+                "headline-lg": ["Inter"],
+                "body-lg": ["Inter"],
+                "label-sm": ["Inter"],
+                "display-lg": ["Inter"],
+                "label-md": ["Inter"]
+        },
+        "fontSize": {
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+        }
+      },
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background scroll-smooth">
+<!-- TopNavBar -->
+<header class="bg-surface docked full-width top-0 border-b border-outline-variant shadow-sm z-50 sticky">
+<div class="flex justify-between items-center px-container-margin py-md max-w-7xl mx-auto w-full">
+<div class="flex items-center gap-sm">
+<img alt="Budget Pro Logo" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uhjqA95ayTsYKXcIuLhWpHX1ibiXFScr0rGSQW0O57BeP0862AnxVXknfaiC2HGTgYhKxqRT9UquxCXPRler7AFwk1ygZBBFCAARCNFXH5UQkHoi7iG3Q_gA0Mi_eNK9J0rceeOBtY7HCfbxJcV9czWwAgB29XClgMlrsnuI40YJ3Ji59BvXff5v0x5XLF7bRkRrCTeK5a3w4EK9qPJPBYdT5rayHOWcka9DMdmL-_fHpvSBBeMIXG6DeIb4Zg-i2IQtcYH9DjVYg"/>
+<div class="font-headline-md text-headline-md font-bold text-primary">Spending Tracker: Budget Pro</div>
+</div>
+<nav class="hidden md:flex gap-lg items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#features">Features</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="#support">Support</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="https://raw.githubusercontent.com/FBNKCMaster/mobile-apps-legal-docs/main/spending_tracker/ios/privacy_policy.txt">Privacy</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low p-sm rounded-full transition-all">account_circle</button>
+<a class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md font-bold hover:opacity-90 active:scale-95 transition-all" href="#download">Get Started</a>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-xl pb-24 md:pt-32 md:pb-40">
+<div class="max-w-7xl mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<div class="z-10">
+<span class="inline-block px-md py-xs bg-primary-container text-on-primary-container rounded-full font-label-md text-label-md mb-md">Scan prices &amp; track budget</span>
+<h1 class="font-display-lg text-display-lg text-on-surface font-extrabold mb-lg">Spending Tracker: Budget Pro</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-lg">Take control of your shopping budget. Scan prices instantly and never overspend again!</p>
+<div class="flex flex-wrap gap-md" id="download">
+<button class="bg-on-surface text-surface py-md px-xl rounded-xl flex items-center gap-sm hover:bg-secondary transition-all">
+<span class="material-symbols-outlined text-[32px]" data-weight="fill">ios</span>
+<div class="text-left">
+<p class="text-[10px] uppercase font-bold leading-none">Download on the</p>
+<p class="text-lg font-bold leading-tight">App Store</p>
+</div>
+</button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-primary/10 to-secondary/10 rounded-full blur-3xl"></div>
+<img alt="Budget Pro Spending Tracker Interface" class="w-full h-auto rounded-3xl shadow-2xl border-8 border-white/50 backdrop-blur-sm object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ugiFJJ_V9gi1qecp-X8G-cfjMZmRxQ4Ffv4fNZJq3IIySGrXThnMOzcozk-sV65xVQ7Ug6lvt-sCWtFNIsGusZvLN8O24czA6DXC3zpDr3njJSFBuRAS70n2b5J2OdTQLDeAgXAPpfIqb7iyJt1IUye-h7p_fXOAvbfE-QFaacoCX_CF-YK3-jDaHYjaqwCRmL40QF3MWbpH8YfhyEGDBZKewq_U5UAyvEg-LY6nrQVpTWby8JLnT53EDNaUFVm6-ZxsS_DJAaLmw"/>
+</div>
+</div>
+</section>
+<!-- Bento Grid Features Section -->
+<section class="py-24 bg-surface-container-low" id="features">
+<div class="max-w-7xl mx-auto px-container-margin">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-md">Engineered for Financial Clarity</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Our tools are built to give you a professional-grade overview of your spending without the complexity.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Large Feature: OCR -->
+<div class="md:col-span-2 bg-surface-container-lowest p-xl rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow group">
+<div class="flex flex-col md:flex-row gap-lg items-center">
+<div class="flex-1">
+<span class="material-symbols-outlined text-primary text-[48px] mb-md" data-weight="fill">barcode_scanner</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Instant Price Scanner (OCR)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Point your camera at price tags to instantly log costs. Our advanced OCR technology recognizes pricing in real-time, making manual entry a thing of the past.</p>
+</div>
+<div class="flex-1 w-full h-48 bg-surface-container rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
+<img alt="OCR Scanning Technology" class="w-full h-full object-cover mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCobeKvc86jQozNTWGy4IwACwLWKaiB5Gk5437ue0DLP_Jh3Gt6Bi4i7_NP40QiSgh0FdBF3-0OQKlBsKcMKXF5FYkz_oTYG4AAoGpYNKbgO6MZ_Kynf28fhlPdLViHIGNVPEksf863VN7tAqdY5XFbDg3XQ73tG_vutsGe36D5f7_QNe8_oaxB_YWVF_rKmQhTVf7ivWLErxogU_0CBrQKA6pHZeOMVfIacbzLekRI-_aJ6u-VgBpumr_7L2UA1AnNyzVRMrOyV0M"/>
+</div>
+</div>
+</div>
+<!-- Medium Feature: Budget Tracking -->
+<div class="bg-surface-container-lowest p-xl rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-secondary text-[40px] mb-md">account_balance_wallet</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Real-time Budget Tracking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">See your remaining balance update the second you scan an item. Never wonder if you have enough at the checkout counter again.</p>
+</div>
+<!-- Medium Feature: Allowance -->
+<div class="bg-surface-container-lowest p-xl rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-[40px] mb-md">calendar_today</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Smart Monthly Allowance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Set a fixed monthly budget and let the app intelligently distribute it across your categories and shopping trips.</p>
+</div>
+<!-- Large Feature: AI Insights -->
+<div class="md:col-span-2 bg-surface-container-lowest p-xl rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow overflow-hidden relative group">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-secondary text-[40px] mb-md">insights</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">AI-Powered Insights</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Our intelligent algorithms analyze your spending patterns to suggest where you can save and how to optimize your monthly capital.</p>
+</div>
+<div class="absolute right-0 bottom-0 w-64 h-64 -mr-16 -mb-16 bg-secondary/5 rounded-full group-hover:scale-110 transition-transform duration-500"></div>
+</div>
+<!-- Small Feature: Privacy -->
+<div class="bg-inverse-surface text-inverse-on-surface p-xl rounded-xl shadow-lg flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary-fixed-dim text-[40px] mb-md">lock</span>
+<h3 class="font-headline-md text-headline-md mb-sm">Total Privacy</h3>
+<p class="font-body-md text-body-md opacity-80">Offline-first design with local storage. Your financial data never leaves your device.</p>
+</div>
+<div class="mt-lg pt-lg border-t border-outline/20 flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary-fixed-dim">shield</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">No Cloud Required</span>
+</div>
+</div>
+<!-- Medium Feature: Shopping Lists -->
+<div class="bg-surface-container-lowest p-xl rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-[40px] mb-md">format_list_bulleted</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-sm">Shopping Lists</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Create and manage multiple lists. Link them directly to your budget to see the projected total before you even leave home.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Support & Contact Section -->
+<section class="py-24 bg-surface-bright" id="support">
+<div class="max-w-7xl mx-auto px-container-margin">
+<div class="bg-surface-container-lowest rounded-3xl border border-outline-variant overflow-hidden shadow-sm flex flex-col md:flex-row">
+<div class="md:w-1/3 bg-on-tertiary-fixed-variant p-xl text-on-tertiary flex flex-col justify-between">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-md">Support &amp; Contact</h2>
+<p class="font-body-md text-body-md opacity-80">Our team is dedicated to providing you with the best financial tracking experience.</p>
+</div>
+<div class="space-y-md mt-xl">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary-fixed-dim">mail</span>
+<span class="font-body-md text-body-md">FBKDevelop@gmail.com</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary-fixed-dim">help</span>
+<span class="font-body-md text-body-md">24/7 Documentation</span>
+</div>
+</div>
+</div>
+<div class="flex-1 p-xl">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-lg">Frequently Asked Questions</h3>
+<div class="space-y-lg">
+<div class="p-lg bg-surface-container-low rounded-lg border border-outline-variant">
+<h4 class="font-label-md text-label-md font-bold text-on-surface mb-xs">Need help with specific features?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Visit our GitHub repository for detailed documentation, bug reporting, and feature requests.</p>
+<a class="inline-flex items-center gap-sm bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md font-bold hover:bg-primary-container hover:text-on-primary-container transition-all" href="https://github.com/FBNKCMaster">
+                                    Visit GitHub Documentation
+                                    <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg mt-xl">
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface mb-xs">Is my data secure?</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Yes, Budget Pro uses local storage. Your financial data never leaves your device or touches our servers.</p>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface mb-xs">Does OCR work offline?</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Absolutely. Our price recognition model is built-in, allowing you to scan prices even without an internet connection.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-container-margin py-xl max-w-7xl mx-auto w-full gap-lg">
+<div class="flex flex-col gap-sm items-center md:items-start">
+<div class="flex items-center gap-sm">
+<img alt="Budget Pro Logo" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uhjqA95ayTsYKXcIuLhWpHX1ibiXFScr0rGSQW0O57BeP0862AnxVXknfaiC2HGTgYhKxqRT9UquxCXPRler7AFwk1ygZBBFCAARCNFXH5UQkHoi7iG3Q_gA0Mi_eNK9J0rceeOBtY7HCfbxJcV9czWwAgB29XClgMlrsnuI40YJ3Ji59BvXff5v0x5XLF7bRkRrCTeK5a3w4EK9qPJPBYdT5rayHOWcka9DMdmL-_fHpvSBBeMIXG6DeIb4Zg-i2IQtcYH9DjVYg"/>
+<div class="font-headline-md text-headline-md font-bold text-primary">Spending Tracker: Budget Pro</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2026 FBK Dev. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-lg">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all hover:underline decoration-primary" href="https://raw.githubusercontent.com/FBNKCMaster/mobile-apps-legal-docs/main/spending_tracker/ios/privacy_policy.txt">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all hover:underline decoration-primary" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all hover:underline decoration-primary" href="#">Cookie Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all hover:underline decoration-primary" href="#support">Support Center</a>
+</div>
+</div>
+</footer>
+</body></html>
